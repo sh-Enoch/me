@@ -12,20 +12,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Your Name - Portfolio",
-  description: "Portfolio of a passionate developer showcasing projects, skills, and experience in web development",
-  keywords: "developer, portfolio, web development, react, next.js, javascript",
-  author: "Your Name",
+  title: "Enoch Wafula | Frontend Software Engineer",
+  description:
+    "Portfolio for Enoch Wafula, a frontend software engineer in Nairobi building polished, reliable web products.",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }
