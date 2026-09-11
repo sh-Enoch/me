@@ -224,16 +224,29 @@ export default function Home() {
           APIs, and refining the user experience.
         </SectionHeading>
 
-        <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-          {skills.map((skill) => (
-            <li
-              key={skill}
-              className="flex min-h-20 items-center rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-sm font-semibold text-neutral-800 shadow-sm"
-            >
-              {skill}
-            </li>
+        <div className="space-y-8">
+          {Object.entries(skills).map(([category, categorySkills]) => (
+            <div key={category}>
+              <h3 className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-[#006d77]">
+                {category === "itSupport"
+                  ? "IT Support"
+                  : category === "cloudDevOps"
+                    ? "Cloud & DevOps"
+                    : category}
+              </h3>
+              <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+                {categorySkills.map((skill) => (
+                  <li
+                    key={skill}
+                    className="flex min-h-20 items-center rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-sm font-semibold text-neutral-800 shadow-sm"
+                  >
+                    {skill}
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
-        </ul>
+        </div>
       </section>
 
       <section

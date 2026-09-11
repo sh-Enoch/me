@@ -1,13 +1,13 @@
 export const profile = {
   name: "Enoch Wafula",
-  role: "Frontend Software Engineer",
+  role: "Software Developer | IT Support",
   location: "Nairobi, Kenya",
   availability: "Freelance and full-time roles",
   image: "/profile-placeholder.svg",
   headline:
-    "I build polished web experiences that are fast, accessible, and easy to maintain.",
+    "Building scalable software, dependable IT systems, and intuitive web experiences.",
   summary:
-    "I'm a frontend-focused software developer passionate about building accessible, scalable, and thoughtfully crafted web applications. I enjoy creating user interfaces that feel intuitive, responsive, and polished — paying close attention to the details that improve usability and overall user experience.\n\nMy work sits at the intersection of design and engineering, where clean frontend architecture meets practical product thinking. I enjoy translating ideas and requirements into maintainable systems that not only function well, but also feel seamless to use.\n\nCurrently, I work with the frontend team at Boldplus, where I contribute to building and maintaining modern web platforms. I collaborate closely across design, frontend, and backend workflows to develop reusable components, scalable UI patterns, and reliable user experiences across products.\n\nBeyond frontend engineering, I'm also exploring Professional Cloud DevOps Engineering to better understand deployment workflows, cloud infrastructure, and how modern applications move from development to production efficiently.\n\nOutside of tech, I enjoy playing hockey, listening to music, and spending time with friends.",
+    "I'm an enthusiastic Software Developer and IT Support Specialist dedicated to building reliable, scalable software solutions and keeping technical operations running seamlessly. My background spans both ends of technology delivery: developing clean, user-focused applications and providing hands-on IT support to resolve complex hardware, network, and system challenges.\n\nMy development work sits at the intersection of practical engineering and thoughtful design. While I have deep experience crafting intuitive, responsive frontends and maintainable web architecture, I view systems holistically—ensuring software is robust, accessible, and aligned with real-world user workflows.\n\nCurrently, I work with the engineering team at Boldplus, where I contribute to building and maintaining modern web platforms. I collaborate across design, frontend, and backend workflows to deliver reusable components, streamline technical processes, and support reliable day-to-day operations.\n\nTo bridge development with infrastructure, I am also expanding into Professional Cloud DevOps Engineering—focusing on deployment automation, cloud infrastructure, and proactive system monitoring to keep applications and IT environments fast and secure.\n\nOutside of tech, I enjoy playing hockey, listening to music, and spending time with friends.",
   email: "enochweks@gmail.com",
   socials: [
     { label: "GitHub", href: "https://github.com/sh-Enoch" },
@@ -15,16 +15,31 @@ export const profile = {
   ],
 };
 
-export const skills = [
-  "Next.js",
-  "React",
-  "JavaScript",
-  "TypeScript",
-  "Node.js",
-  "CSS",
-  "APIs",
-  "Product Design",
-];
+export const skills = {
+  development: [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "JavaScript",
+    "Node.js",
+    "RESTful APIs",
+    "Tailwind CSS",
+  ],
+  itSupport: [
+    "System Administration",
+    "Network Troubleshooting (LAN/WAN, DNS, DHCP)",
+    "Linux & Windows Support",
+    "Hardware & Software Diagnostics",
+    "User & Access Management",
+  ],
+  cloudDevOps: [
+    "Git & GitHub",
+    "Docker",
+    "CI/CD Workflows",
+    "Cloud Fundamentals (GCP/AWS)",
+  ],
+  design: ["Product Design", "Responsive UI/UX", "Figma"],
+};
 
 export const projects = [
   {
