@@ -68,7 +68,7 @@ export const projects = [
 export const experience = [
   {
     company: "Independent",
-    role: "Full-stack Developer",
+    role: "Full-stack Dev",
     period: "2024 - Present",
     description:
       "Designing and building production-ready websites and internal tools for growing teams.",
