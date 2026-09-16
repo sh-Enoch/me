@@ -10,9 +10,7 @@ export default function SkillsPage() {
           career.
         </p>
       </section>
-      <div>
-        <hr />
-      </div>
+  
       <section className="bg-white"></section>
     </main>
   );
