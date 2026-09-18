@@ -1,4 +1,5 @@
 import React from "react";
+import { ShareIcon } from "lucide-react";
 
 type BadgeProps = {
   name: string;
@@ -9,8 +10,20 @@ type BadgeProps = {
 
 function Badge({ name, date_earned, issued_by, cert_id }: BadgeProps) {
   return (
-    <article className=" flex flex-col items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white p-4 shadow-md transition-transform duration-300 hover:scale-105">
-        
+    <article className="flex flex-col gap-4 p-6">
+      <div className="items-center flex flex-col gap-4 ">
+        <div>Completion Badge</div>
+        <div className="text-sm text-gray-600 flex flex-col items-center">
+          <h3 className="font-">{name}</h3>
+          <p>Earned {date_earned} EDT</p>
+        </div>
+      </div>
+      <div className="items-center flex flex-col gap-4">
+        <div className="rounded-4xl p-2 border border-gray-700">learn more</div>
+        <div>
+          <ShareIcon />
+        </div>
+      </div>
     </article>
   );
 }
