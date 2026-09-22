@@ -1,11 +1,13 @@
 import { Mail } from "lucide-react";
+import Link from "next/link";
 import { profile } from "@/data/profile";
 
 const navItems = [
-  { label: "Work", href: "#work" },
-  { label: "Skills", href: "#skills" },
-  { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
+  { label: "Work", href: "/#work" },
+  { label: "Skills", href: "/#skills" },
+  { label: "Skills & badges", href: "/skills" },
+  { label: "Experience", href: "/#experience" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 function GitHubIcon({ className }) {
@@ -53,8 +55,8 @@ export function SiteHeader() {
         aria-label="Main navigation"
         className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-4 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8"
       >
-        <a
-          href="#top"
+        <Link
+          href="/"
           className="flex w-fit items-center gap-3 rounded-full outline-none transition focus-visible:ring-2 focus-visible:ring-[#006d77] focus-visible:ring-offset-4"
         >
           <span className="flex size-11 items-center justify-center rounded-full bg-neutral-950 text-sm font-semibold text-white">
@@ -66,7 +68,7 @@ export function SiteHeader() {
               {profile.role}
             </span>
           </span>
-        </a>
+        </Link>
 
         <div className="flex flex-col gap-4 md:flex-row md:items-center">
           <ul className="flex flex-wrap items-center gap-1 text-sm font-medium text-neutral-600">

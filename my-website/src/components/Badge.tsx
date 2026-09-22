@@ -12,7 +12,7 @@ function Badge({ name, date_earned, issued_by, cert_id }: BadgeProps) {
   return (
     <article className="flex flex-col gap-4 p-6">
       <div className="items-center flex flex-col gap-4 ">
-        <div className="p-6 bg-whiterounded-xl border border-gray-300 flex flex-col items-center justify-center gap-4">
+        <div className="p-6 shadow-md  bg-[#f7f5f0]/90 rounded-3xl border border-gray-300 flex flex-col items-center justify-center gap-4">
           <div className="font-bold text-xl">
             <span>{issued_by}</span>
           </div>
@@ -38,7 +38,7 @@ function Badge({ name, date_earned, issued_by, cert_id }: BadgeProps) {
         </div>
       </div>
       <div className="items-center flex flex-col gap-4">
-        <button className="rounded-full p-3 border border-gray-700 inline-flex items-center justify-center bg-neutral-950 px-5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#006d77] focus-visible:ring-offset-2 active:scale-[0.98]">
+        <button className=" tracking-wider rounded-full p-3 border border-gray-700 inline-flex items-center justify-center bg-neutral-950 px-5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#006d77] focus-visible:ring-offset-2 active:scale-[0.98]">
           learn more
         </button>
         <div>

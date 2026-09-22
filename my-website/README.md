@@ -18,6 +18,10 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser.
+To access it from another device on the same network, open
+`http://<this-computer-ip>:3000`, for example
+[http://192.168.1.105:3000](http://192.168.1.105:3000). Make sure the device is
+on the same network and allow port `3000` through the host firewall if needed.
 
 ## Project Structure
 
