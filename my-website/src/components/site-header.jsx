@@ -3,10 +3,12 @@ import Link from "next/link";
 import { profile } from "@/data/profile";
 
 const navItems = [
-  { label: "Work", href: "/#work" },
-  { label: "Skills", href: "/#skills" },
+  // { label: "Work", href: "/#work" },
+  // { label: "Skills", href: "/#skills" },
   { label: "Skills & badges", href: "/skills" },
-  { label: "Experience", href: "/#experience" },
+  // { label: "Experience", href: "/#experience" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Blogs", href: "/#blogs" },
   { label: "Contact", href: "/#contact" },
 ];
 
@@ -50,67 +52,68 @@ export function SiteHeader() {
     .toUpperCase();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-neutral-200/80 bg-[#f7f5f0]/90 text-neutral-950 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-neutral-950/10 bg-[#f7f5f0]/90 text-neutral-950 backdrop-blur-xl">
       <nav
         aria-label="Main navigation"
-        className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-4 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8"
+        className="mx-auto grid max-w-6xl grid-cols-1 gap-4 px-4 py-6 sm:px-6 md:grid-cols-[1fr_auto_1fr] md:items-center lg:px-8"
       >
         <Link
           href="/"
-          className="flex w-fit items-center gap-3 rounded-full outline-none transition focus-visible:ring-2 focus-visible:ring-[#006d77] focus-visible:ring-offset-4"
+          className="group flex w-fit items-center gap-3 rounded-2xl outline-none transition focus-visible:ring-2 focus-visible:ring-[#006d77] focus-visible:ring-offset-4"
         >
-          <span className="flex size-11 items-center justify-center rounded-full bg-neutral-950 text-sm font-semibold text-white">
+          <span className="flex size-11 items-center justify-center rounded-xl bg-[#006d77] text-sm font-bold text-white shadow-[4px_4px_0_#d95d39] transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
             {initials}
           </span>
-          <span className="leading-tight">
-            <span className="block text-sm font-semibold">{profile.name}</span>
-            <span className="block text-xs text-neutral-500">
-              {profile.role}
+          <span className="leading-tight md:hidden lg:block">
+            <span className="block text-sm font-bold tracking-tight">
+              {profile.name}
+            </span>
+            <span className="block text-[11px] font-medium uppercase tracking-[0.16em] text-neutral-500">
+              Software + support
             </span>
           </span>
         </Link>
 
-        <div className="flex flex-col gap-4 md:flex-row md:items-center">
-          <ul className="flex flex-wrap items-center gap-1 text-sm font-medium text-neutral-600">
+        <div className="order-3 min-w-0 md:order-0">
+          <ul className="flex items-center gap-1 overflow-x-auto rounded-2xl border border-neutral-950/10 bg-white/70 p-3 text-sm font-semibold text-neutral-600 shadow-sm md:justify-center">
             {navItems.map((item) => (
               <li key={item.href}>
                 <a
                   href={item.href}
-                  className="block rounded-full px-3 py-2 transition hover:bg-white hover:text-neutral-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006d77]"
+                  className="block whitespace-nowrap rounded-xl px-3 py-2 transition hover:bg-[#e5f2ef] hover:text-[#006d77] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006d77]"
                 >
                   {item.label}
                 </a>
               </li>
             ))}
           </ul>
+        </div>
 
-          <div className="flex flex-wrap items-center gap-2">
-            <a
-              href={`mailto:${profile.email}`}
-              className="inline-flex items-center gap-2 rounded-full bg-neutral-950 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-[#006d77] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006d77] focus-visible:ring-offset-2"
-            >
-              <Mail className="size-4 opacity-70" aria-hidden="true" />
-              Email me
-            </a>
-            {profile.socials.map((social) => {
-              const Icon = socialIcons[social.label];
+        <div className="absolute right-4 top-3 p-3 flex items-center gap-2 sm:right-6 md:static md:justify-self-end lg:right-auto">
+          {profile.socials.map((social) => {
+            const Icon = socialIcons[social.label];
 
-              return (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white/70 px-4 py-2 text-sm font-semibold text-neutral-700 transition hover:border-neutral-300 hover:bg-white hover:text-neutral-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006d77] focus-visible:ring-offset-2"
-                >
-                  {Icon ? (
-                    <Icon className="size-4 text-neutral-400 transition group-hover:text-neutral-700" />
-                  ) : null}
-                  {social.label}
-                </a>
-              );
-            })}
-          </div>
+            return (
+              <a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={social.label}
+                title={social.label}
+                className="group inline-flex size-10 items-center justify-center rounded-xl border border-neutral-950/10 bg-white/70 text-neutral-500 transition hover:border-[#006d77] hover:bg-[#e5f2ef] hover:text-[#006d77] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006d77] focus-visible:ring-offset-2"
+              >
+                {Icon ? <Icon className="size-4" /> : null}
+              </a>
+            );
+          })}
+          <a
+            href={`mailto:${profile.email}`}
+            className="inline-flex items-center gap-2 rounded-xl bg-neutral-950 px-4 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-[#006d77] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006d77] focus-visible:ring-offset-2"
+          >
+            <Mail className="size-4" aria-hidden="true" />
+            <span className="hidden sm:inline">Let&apos;s talk</span>
+          </a>
         </div>
       </nav>
     </header>
