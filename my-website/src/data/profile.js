@@ -31,6 +31,7 @@ export const skills = {
     "Linux & Windows Support",
     "Hardware & Software Diagnostics",
     "User & Access Management",
+    "Any Desk",
   ],
   cloudDevOps: [
     "Git & GitHub",

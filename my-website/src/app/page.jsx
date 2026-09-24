@@ -4,6 +4,7 @@ import { SectionHeading } from "@/components/section-heading";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { experience, profile, projects, skills } from "@/data/profile";
+import ContactCard from "@/components/Contact";
 import {
   ArrowRight,
   BriefcaseBusiness,
@@ -282,7 +283,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section
+      {/* <section
         id="contact"
         className="bg-neutral-950 px-4 py-16 sm:px-6 lg:px-8"
       >
@@ -320,6 +321,12 @@ export default function Home() {
             ))}
           </div>
         </div>
+      </section> */}
+      <section
+        id="contact"
+        className="px-4 py-16 sm:px-6 lg:px-8"
+      >
+        <ContactCard />
       </section>
 
       <SiteFooter />
